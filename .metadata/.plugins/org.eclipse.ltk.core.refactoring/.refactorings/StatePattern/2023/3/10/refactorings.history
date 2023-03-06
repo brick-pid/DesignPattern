@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;OverdraftAccount&apos; to &apos;OverdraftState&apos;&#x0D;&#x0A;- Original project: &apos;StatePattern&apos;&#x0D;&#x0A;- Original element: &apos;OverdraftAccount&apos;&#x0D;&#x0A;- Renamed element: &apos;OverdraftState&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;OverdraftAccount&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{OverdraftAccount.java[OverdraftAccount" matchStrategy="1" name="OverdraftState" qualified="false" references="true" similarDeclarations="false" stamp="1678092267251" textual="false" version="1.0"/>
+</session>

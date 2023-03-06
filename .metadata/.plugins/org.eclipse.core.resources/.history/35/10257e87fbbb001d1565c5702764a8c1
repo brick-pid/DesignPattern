@@ -1,0 +1,12 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		Account acc = new Account();
+		acc.setBalance(new NormalState(acc));
+		acc.setBalance(100);
+		System.out.println(acc);
+
+	}
+
+}

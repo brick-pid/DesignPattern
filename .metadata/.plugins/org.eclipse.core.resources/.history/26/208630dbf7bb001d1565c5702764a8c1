@@ -1,0 +1,27 @@
+
+public class NormalState extends AccountState {
+
+	@Override
+	public void deposit(double amount) {
+		this.acc.setBalance(this.acc.getBalance() + amount);
+		stateCheck();
+	}
+
+	@Override
+	public void withdraw(double amount) {
+		this.acc.setBalance(this.acc.getBalance() - amount);
+	}
+
+	@Override
+	public void computeInterest() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void stateCheck() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
