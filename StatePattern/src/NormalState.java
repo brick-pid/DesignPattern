@@ -8,30 +8,18 @@ public class NormalState extends AccountState {
 	@Override
 	public void deposit(double amount) {
 		this.acc.setBalance(this.acc.getBalance() + amount);
-		stateCheck();
+		this.acc.checkState();
 	}
 
 	@Override
 	public void withdraw(double amount) {
 		this.acc.setBalance(this.acc.getBalance() - amount);
-		stateCheck();
+		this.acc.checkState();
 	}
 
 	@Override
 	public void computeInterest() {
 		System.out.println("Normal Account has no interest");
-	}
-
-	@Override
-	public void stateCheck() {
-		double b = this.acc.getBalance();
-		if(b < 0 && b > -2000) {
-			this.acc.setState(new OverdraftState(this.acc));
-		}
-		if(b <= -2000) {
-			this.acc.setState(new RestrictedState(this.acc));
-		}
-		
 	}
 	
 	@Override

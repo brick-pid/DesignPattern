@@ -35,5 +35,19 @@ public class Account {
 	public String toString() {
 		return state.toString() + "; balance:" + balance;
 	}
-
+	
+	/**
+	 * 由Context类来统一管理状态
+	 */
+	public void checkState() {
+		if(balance < 0 && balance > -2000) {
+			setState(new OverdraftState(this));
+		}
+		else if(balance <= -2000) {
+			setState(new RestrictedState(this));
+		}
+		else {
+			setState(new NormalState(this));
+		}
+	}
 }

@@ -8,7 +8,7 @@ public class RestrictedState extends AccountState {
 	@Override
 	public void deposit(double amount) {
 		this.acc.setBalance(this.acc.getBalance() + amount);
-		stateCheck();
+		this.acc.checkState();
 	}
 
 	@Override
@@ -19,18 +19,6 @@ public class RestrictedState extends AccountState {
 	@Override
 	public void computeInterest() {
 		System.out.println("Restrict Account: Compute Interest");
-	}
-
-	@Override
-	public void stateCheck() {
-		double b = this.acc.getBalance();
-		if(b < 0 && b > -2000) {
-			this.acc.setState(new OverdraftState(this.acc));
-		}
-		if(b >= 0) {
-			this.acc.setState(new NormalState(this.acc));
-		}
-		
 	}
 	
 	@Override
