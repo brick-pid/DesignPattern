@@ -1,0 +1,62 @@
+public class Mediator {
+	Button button;
+	Label label;
+	List list;
+
+	public Mediator(Button btn, Label label, List list) {
+		this.button = btn;
+		this.label = label;
+		this.list = list;
+	}
+
+	public ComponentChange(Component c) {
+		if(c == button) {
+			list.update();
+			label.update();
+		} else if(c == lable) {
+			button.update();
+			list.update();
+		} else if(c == list) {
+			button.update();
+			label.update();
+		}
+	}
+}
+
+
+// 职责1. 持有中介者引用(set方法赋值, 保证各个子类的中介者是同一个)
+// 职责2. 实现changed()方法
+// 职责3. 定义Colleagues之间要满足的接口(update)
+public abstract class Component {
+	Mediator mediator;
+
+	// 通过set来赋值的目的是：保证各个同事之间持有“同一个”中介者对象。
+	public void setMediator(Mediator m) {
+		mediator = m;
+	}
+
+	Public void changed() {
+		mediator.ComponentChange(this);
+	}
+
+	public abstract void update();
+}
+
+
+public class Button extends Component {
+	public void update() {
+		//...
+	}
+}
+
+public class Label extends Component {
+	public void update() {
+		//...
+	}
+}
+
+public class List extends Component {
+	public void update() {
+		//...
+	}
+}
